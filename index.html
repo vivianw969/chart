@@ -1,76 +1,72 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <title>Charts on LitterTRAK</title>
+    <title>Prince George's County Litter Collection Analysis</title>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Charts on LitterTRAK</h1>
-    <container>
-      <h2>This is data tracking the collection of trash and debris by County residents, community organizations, and businesses during individual and group clean-up events.</h2>
-    </container>
-    
- <nav class="navbar nav-pills justify-content-center">
-  <div class="nav">
-    <div class="navControl">
-      <a class="nav-link" href="#">
-      </a>
-      <a class="nav-link icon" onclick="myFunction()">
-      </a>
-    </div>
-  </div>
-</nav>
-    <container>
-<form class="control">
-  <input type="checkbox" id="cChart1" checked />
-  <label for="cChart1">Pick-up Types</label>
-
-  <input type="checkbox" id="cChart2" checked />
-  <label for="cChart2">Bag Counts</label>
-
-  <input type="checkbox" id="cChart3" checked />
-  <label for="cChart3">Tire Counts</label>
-
-  <input type="checkbox" id="cChart4" checked />
-  <label for="cChart4">Involved Organizations</label>
-</form>
+    <header>
+      <h1>Visual Dashboard of Litter Collection</h1>
+      <container>
+        <h2>This dashboard visualizes litter collection data from Prince George's County, Maryland. It tracks the collection of trash, debris, and tires by residents, community organizations, and businesses during individual and group clean-up events across different council districts.</h2>
       </container>
-    <container>
-<div class="chart">
-  <div class="upperChart">
-    <div class="myChart chart1">
-      <canvas id="Chart1" width="400" height="400"></canvas>
-    </div>
-    <div class="myChart chart2">
-      <canvas id="Chart2" width="400" height="400"></canvas>
-    </div>
-  </div>
-  <div class="lowerChart">
-    <div class="myChart chart3">
-      <canvas id="Chart3" width="400" height="400"></canvas>
-    </div>
-    <div class="myChart chart4">
-      <canvas id="Chart4" width="400" height="400"></canvas>
-    </div>
-  </div>
-</div>
-    </container>
- 
+    </header>
+
+    <main>
+      <container>
+        <form class="control">
+          <input type="checkbox" id="cChart1" checked />
+          <label for="cChart1">Pick-up Types</label>
+
+          <input type="checkbox" id="cChart2" checked />
+          <label for="cChart2">Bag Counts</label>
+
+          <input type="checkbox" id="cChart3" checked />
+          <label for="cChart3">Tire Counts</label>
+
+          <input type="checkbox" id="cChart4" checked />
+          <label for="cChart4">Involved Organizations</label>
+        </form>
+      </container>
+
+      <container>
+        <div class="chart">
+          <div class="upperChart">
+            <div class="myChart chart1">
+              <canvas id="Chart1" width="400" height="400"></canvas>
+            </div>
+            <div class="myChart chart2">
+              <canvas id="Chart2" width="400" height="400"></canvas>
+            </div>
+          </div>
+          <div class="lowerChart">
+            <div class="myChart chart3">
+              <canvas id="Chart3" width="400" height="400"></canvas>
+            </div>
+            <div class="myChart chart4">
+              <canvas id="Chart4" width="400" height="400"></canvas>
+            </div>
+          </div>
+        </div>
+      </container>
+    </main>
+
+    <footer>
+      <p>
+        Data Source:
+        <a href="https://data.princegeorgescountymd.gov/Environment/LitterTRAK/9tsa-iner">Prince George's County LitterTRAK Dataset</a>
+      </p>
+      <p>
+        Note: Due to API limitations, this visualization shows 1,000 most recent records from the original dataset of 11,300 entries.
+      </p>
+    </footer>
+
     <script src="/chart.js" type="module"></script>
-     <p>
-      According to
-      <a
-        href="https://data.princegeorgescountymd.gov/Environment/LitterTRAK/9tsa-iner">LitterTRAK</a
-      >, the dataset has originally 11.3k rows.
-    </p>
-    <p>
-      Due to API restrictions, it only allows 1000 limits, meaning the total
-      number is 1000 instances.
-    </p>
   </body>
 </html>
